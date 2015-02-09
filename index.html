@@ -27,6 +27,7 @@
 
           if (eventName) {
             MP.api.segment(eventName, propName, dateRange).done(function(results) {
+              $('<div></div>').appendTo('body').MPChart({chartType: 'line'}).MPChart('setData', results);;
               eventGraph.MPChart('setData', results);
               eventTable.MPTable('setData', results);
             });
